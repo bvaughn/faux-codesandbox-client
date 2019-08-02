@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import initFrontend from 'react-devtools-inline/initFrontend';
 
 export default function DevToolsPanel({ defaultTab, frameID, hidden }) {
-  // eslint-disable-next-line no-unused-vars
-  const [DevToolsUI, setDevToolsUI] = useState(null);
+  const [ui, setUI] = useState(null);
 
   useEffect(() => {
-    if (DevToolsUI === null) {
+    if (ui === null) {
       const frame = document.getElementById(frameID);
       const { contentWindow } = frame;
 
@@ -15,7 +14,7 @@ export default function DevToolsPanel({ defaultTab, frameID, hidden }) {
         showTabBar: false,
       };
 
-      setDevToolsUI(initFrontend(frame, optionalProps));
+      setUI(initFrontend(frame, optionalProps));
 
       // Let the backend know to initialize itself.
       // We can't do this directly because the iframe is sandboxed.
@@ -27,11 +26,11 @@ export default function DevToolsPanel({ defaultTab, frameID, hidden }) {
         }, '*');
       };
     }
-  }, [defaultTab, frameID, DevToolsUI]);
+  }, [defaultTab, frameID, ui]);
 
   if (hidden) {
     return null;
   }
 
-  return DevToolsUI;
+  return ui;
 }
