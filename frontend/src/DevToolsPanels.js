@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import initFrontend from 'react-devtools-inline/initFrontend';
 
-function Content({ defaultTab, frameID, hidden }) {
+export default function DevToolsPanel({ defaultTab, frameID, hidden }) {
   // eslint-disable-next-line no-unused-vars
   const [DevToolsUI, setDevToolsUI] = useState(null);
 
@@ -35,6 +35,3 @@ function Content({ defaultTab, frameID, hidden }) {
 
   return DevToolsUI;
 }
-
-export const Components = ({ frameID, hidden }) => <Content defaultTab="components" frameID={frameID} hidden={hidden} />;
-export const Profiler = ({ frameID, hidden }) => <Content defaultTab="profiler" frameID={frameID} hidden={hidden} />;

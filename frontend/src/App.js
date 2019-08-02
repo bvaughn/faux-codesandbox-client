@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Components, Profiler } from './DevToolsPanels';
+import DevToolsPanel from './DevToolsPanels';
 import './App.css';
 
 function App() {
@@ -31,8 +31,8 @@ function App() {
           </button>
          </div>
          <div className="TabContent">
-            <Components frameID='sandbox' hidden={tabID !== 'components'} />
-            <Profiler frameID='sandbox' hidden={tabID !== 'profiler'} />
+            <DevToolsPanel defaultTab="components" frameID='sandbox' hidden={tabID !== 'components'} />
+            <DevToolsPanel defaultTab="profiler" frameID='sandbox' hidden={tabID !== 'profiler'} />
          </div>
        </div>
     </div>
