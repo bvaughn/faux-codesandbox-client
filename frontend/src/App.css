@@ -1,0 +1,43 @@
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Frame {
+  flex: 0 0 50%;
+}
+
+.Console {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 50%;
+  background-color: rgb(17, 21, 24);
+  color: #fff;
+}
+
+.Tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.Tab {
+  background: none;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+.Tab:hover {
+  color: #fff;
+}
+.TabActive {
+  background-color: rgb(28, 32, 34);
+  color: #fff;
+}
+.TabContent {
+  background-color: rgb(28, 32, 34);
+  flex-grow: 1;
+}
