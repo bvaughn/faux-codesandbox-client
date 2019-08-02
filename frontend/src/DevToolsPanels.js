@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import DevTools from 'react-devtools-inline/DevTools';
 import initFrontend from 'react-devtools-inline/initFrontend';
-
-let bridge = null;
-let store = null;
 
 function Content({ defaultTab, frameID, hidden }) {
   // eslint-disable-next-line no-unused-vars
-  const [_, setInitialized] = useState(false);
+  const [DevToolsUI, setDevToolsUI] = useState(null);
 
   useEffect(() => {
-    if (bridge === null) {
+    if (DevToolsUI === null) {
       const frame = document.getElementById(frameID);
       const { contentWindow } = frame;
 
-      [bridge, store] = initFrontend(frame);
+      const optionalProps = {
+        defaultTab: defaultTab,
+        showTabBar: false,
+      };
+
+      setDevToolsUI(initFrontend(frame, optionalProps));
 
       // Let the backend know to initialize itself.
       // We can't do this directly because the iframe is sandboxed.
@@ -26,22 +27,13 @@ function Content({ defaultTab, frameID, hidden }) {
         }, '*');
       };
     }
-
-    setInitialized(true);
-  }, [frameID]);
+  }, [defaultTab, frameID, DevToolsUI]);
 
   if (hidden) {
     return null;
   }
 
-  return bridge === null ? null : (
-    <DevTools
-      bridge={bridge}
-      defaultTab={defaultTab}
-      showTabBar={false}
-      store={store}
-    />
-  );
+  return DevToolsUI;
 }
 
 export const Components = ({ frameID, hidden }) => <Content defaultTab="components" frameID={frameID} hidden={hidden} />;
