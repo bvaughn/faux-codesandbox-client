@@ -1,0 +1,9 @@
+{
+  "name": "faux-code-sandbox-backend",
+  "alias": ["faux-code-sandbox-backend"],
+  "files": ["build"],
+  "static": {
+    "public": "build"
+  },
+  "version": 1
+}

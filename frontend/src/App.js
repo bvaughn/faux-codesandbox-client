@@ -21,7 +21,7 @@ export default function App() {
         title="sandbox"
         sandbox="allow-forms allow-scripts allow-same-origin allow-modals allow-popups allow-presentation"
         allow="geolocation; microphone; camera;midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media"
-        src="http://localhost:3002/"
+        src={process.env.REACT_APP_IFRAME_SRC}
       ></iframe>
       <div className="Console">
         <div className="Tabs">

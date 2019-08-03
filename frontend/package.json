@@ -10,8 +10,9 @@
     "scheduler": "^0.0.0-375616788"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
-    "build": "react-scripts build",
+    "start": "REACT_APP_IFRAME_SRC=http://localhost:3002/ PORT=3001 react-scripts start",
+    "build": "REACT_APP_IFRAME_SRC=https://faux-code-sandbox-backend.now.sh/ react-scripts build",
+    "deploy": "yarn build && now deploy --static && now alias",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

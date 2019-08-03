@@ -5,6 +5,12 @@
   "author": "Brian Vaughn <bvaughn@fb.com>",
   "license": "MIT",
   "scripts": {
+    "build": "yarn build:backend && yarn build:frontend",
+    "build:backend": "cd backend && yarn build",
+    "build:frontend": "cd frontend && yarn build",
+    "deploy": "yarn deploy:backend && yarn deploy:frontend",
+    "deploy:backend": "cd backend && yarn deploy",
+    "deploy:frontend": "cd frontend && yarn deploy",
     "prettier": "prettier --single-quote --trailing-comma es5 --write '{backend,frontend}/**/*.js'",
     "start": "concurrently --kill-others \"yarn start:backend\" \"yarn start:frontend\"",
     "start:backend": "cd backend && yarn start",
