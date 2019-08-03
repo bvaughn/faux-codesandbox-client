@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
+    "react": "^0.0.0-375616788",
     "react-devtools-inline": "/Users/bvaughn/Documents/git/react-devtools-experimental/packages/react-devtools-inline",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-dom": "^0.0.0-375616788",
+    "react-scripts": "3.0.1",
+    "scheduler": "^0.0.0-375616788"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",

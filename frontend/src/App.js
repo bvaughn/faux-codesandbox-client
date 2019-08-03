@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DevToolsPanel from './DevToolsPanels';
 import './App.css';
 
-function App() {
+export default function App() {
   const [tabID, setTabID] = useState('components');
 
   return (
@@ -38,5 +38,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
