@@ -1,5 +1,5 @@
 import { createElement, useEffect, useState } from 'react';
-import initFrontend from 'react-devtools-inline/initFrontend';
+import { initialize } from 'react-devtools-inline/frontend';
 
 export default function DevToolsPanel({
   componentsPortalContainer,
@@ -13,7 +13,7 @@ export default function DevToolsPanel({
     if (Component === null) {
       const { contentWindow } = iframe;
 
-      setComponent(initFrontend(iframe));
+      setComponent(initialize(iframe));
 
       // Let the backend know to initialize itself.
       // We can't do this directly because the iframe is sandboxed.
@@ -22,7 +22,7 @@ export default function DevToolsPanel({
       iframe.onload = () => {
         contentWindow.postMessage(
           {
-            type: 'initBackend',
+            type: 'activate',
           },
           '*'
         );

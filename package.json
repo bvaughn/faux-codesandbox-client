@@ -11,7 +11,7 @@
     "deploy": "yarn deploy:backend && yarn deploy:frontend",
     "deploy:backend": "cd backend && yarn deploy",
     "deploy:frontend": "cd frontend && yarn deploy",
-    "prettier": "prettier --single-quote --trailing-comma es5 --write '{backend,frontend}/**/*.js'",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write '{backend,frontend}/src/**/*.js'",
     "start": "concurrently --kill-others \"yarn start:backend\" \"yarn start:frontend\"",
     "start:backend": "cd backend && yarn start",
     "start:frontend": "cd frontend && yarn start"

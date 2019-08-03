@@ -14,30 +14,48 @@
   flex: 0 0 50%;
   background-color: rgb(17, 21, 24);
   color: #fff;
+  border-top: 1px solid rgba(128, 128, 128, 0.35);
 }
 
 .Tabs {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: flex-end;
+  padding: 0 0.5rem;
 }
 
 .Tab {
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   outline: none;
   color: rgba(255, 255, 255, 0.5);
   padding: 0.5rem 1rem;
   font-size: 1rem;
+  cursor: pointer;
+  font-size: 12px;
 }
-.Tab:hover {
+.Tab:hover:not(.TabDisabled) {
   color: #fff;
 }
 .TabActive {
   background-color: rgb(28, 32, 34);
   color: #fff;
+  cursor: default;
 }
 .TabContent {
   background-color: rgb(28, 32, 34);
   flex-grow: 1;
+}
+.TabDisabled {
+  cursor: default;
+}
+
+.Icon {
+  vertical-align: middle;
+  align-self: center;
+  transform: rotateZ(180deg);
+  cursor: pointer;
 }
