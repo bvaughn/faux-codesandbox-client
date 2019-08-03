@@ -20,9 +20,12 @@ export default function DevToolsPanel({
       // Only initialize the backend once the DevTools frontend Store has been initialized!
       // Otherwise the Store may miss important initial tree op codes.
       iframe.onload = () => {
-        contentWindow.postMessage({
-          type: 'initBackend'
-        }, '*');
+        contentWindow.postMessage(
+          {
+            type: 'initBackend',
+          },
+          '*'
+        );
       };
     }
   }, [iframe, Component]);
@@ -32,7 +35,7 @@ export default function DevToolsPanel({
   } else {
     return createElement(Component, {
       overrideTab,
-      showTabBar: false
+      showTabBar: false,
     });
   }
 }

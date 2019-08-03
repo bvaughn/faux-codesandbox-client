@@ -6,7 +6,6 @@ window.addEventListener('message', ({ data }) => {
   switch (data.type) {
     case 'initBackend':
       initBackend();
-console.log('[backend] backend initialized');
       break;
     default:
       break;

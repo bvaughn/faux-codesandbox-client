@@ -5,11 +5,15 @@
   "author": "Brian Vaughn <bvaughn@fb.com>",
   "license": "MIT",
   "scripts": {
+    "prettier": "prettier --single-quote --trailing-comma es5 --write '{backend,frontend}/**/*.js'",
     "start": "concurrently --kill-others \"yarn start:backend\" \"yarn start:frontend\"",
     "start:backend": "cd backend && yarn start",
     "start:frontend": "cd frontend && yarn start"
   },
   "dependencies": {
     "concurrently": "^4.1.1"
+  },
+  "devDependencies": {
+    "prettier": "1.18.2"
   }
 }
