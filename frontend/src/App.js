@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import DevToolsPanel from './DevToolsPanels';
 import './App.css';
 
 export default function App() {
-  const [tabID, setTabID] = useState('components');
+  const [tabID, setTabID] = useState();
+  const componentsRef = useRef(null);
+  const iframeRef = useRef(null);
+  const profilerRef = useRef(null);
+
+  useEffect(() => {
+    setTabID('components');
+  }, []);
 
   return (
     <div className="App">
       <iframe
+        ref={iframeRef}
         id="sandbox"
         className="Frame"
         title="sandbox"
@@ -29,12 +37,20 @@ export default function App() {
            >
             <span role="img" aria-label="React icon">⚛️</span> Profiler
           </button>
-         </div>
-         <div className="TabContent">
-            <DevToolsPanel defaultTab="components" frameID='sandbox' hidden={tabID !== 'components'} />
-            <DevToolsPanel defaultTab="profiler" frameID='sandbox' hidden={tabID !== 'profiler'} />
-         </div>
-       </div>
+        </div>
+        <div className="TabContent">
+          <div ref={componentsRef} hidden={tabID !== 'components'} />
+          <div ref={profilerRef} hidden={tabID !== 'profiler'} />
+        </div>
+        {iframeRef.current !== null && (
+          <DevToolsPanel
+            componentsPortalContainer={componentsRef.current}
+            iframe={iframeRef.current}
+            overrideTab={tabID}
+            profilerPortalContainer={profilerRef.current}
+          />
+        )}
+      </div>
     </div>
   );
 }

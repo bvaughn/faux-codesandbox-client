@@ -7846,7 +7846,7 @@ react-dev-utils@^9.0.1:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-"react-devtools-inline@file:../../react-devtools-experimental/packages/react-devtools-inline":
+react-devtools-inline@/Users/bvaughn/Documents/git/react-devtools-experimental/packages/react-devtools-inline:
   version "4.0.0-alpha.6"
 
 react-dom@^0.0.0-375616788:
