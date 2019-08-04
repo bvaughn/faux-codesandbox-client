@@ -5,7 +5,7 @@ import { activate } from 'react-devtools-inline/backend';
 window.addEventListener('message', ({ data }) => {
   switch (data.type) {
     case 'activate':
-      activate();
+      activate(window);
       break;
     default:
       break;

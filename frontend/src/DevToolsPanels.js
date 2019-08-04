@@ -13,7 +13,7 @@ export default function DevToolsPanel({
     if (Component === null) {
       const { contentWindow } = iframe;
 
-      setComponent(initialize(iframe));
+      setComponent(initialize(contentWindow));
 
       // Let the backend know to initialize itself.
       // We can't do this directly because the iframe is sandboxed.

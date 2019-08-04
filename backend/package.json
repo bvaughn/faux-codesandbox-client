@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^0.0.0-375616788",
-    "react-devtools-inline": "/Users/bvaughn/Documents/git/react-devtools-experimental/packages/react-devtools-inline",
+    "react-devtools-inline": "^4.0.0-alpha.7",
     "react-dom": "^0.0.0-375616788",
     "react-scripts": "3.0.1",
     "scheduler": "^0.0.0-375616788"
