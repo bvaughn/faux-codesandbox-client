@@ -107,3 +107,6 @@ export default function List(props: Props) {
     </div>
   );
 }
+
+// Pretty up the production demo
+List.displayName = 'List';

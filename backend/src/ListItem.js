@@ -38,4 +38,7 @@ function ListItem({ item, removeItem, toggleItem }: Props) {
   );
 }
 
+// Pretty up the production demo
+ListItem.displayName = 'ListItem';
+
 export default memo<Props>(ListItem);
