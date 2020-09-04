@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^0.0.0-375616788",
+    "react": "^0.14.0",
     "react-devtools-inline": "^4.0.0-alpha.7",
     "react-dom": "^0.0.0-375616788",
     "react-scripts": "3.0.1",
